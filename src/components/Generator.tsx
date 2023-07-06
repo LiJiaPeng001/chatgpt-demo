@@ -29,6 +29,8 @@ export default () => {
     }
 
     window.addEventListener('beforeunload', handleBeforeUnload)
+    var pageHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
+    window.scrollTo(0,pageHeight)
     onCleanup(() => {
       window.removeEventListener('beforeunload', handleBeforeUnload)
     })
